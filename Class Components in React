@@ -1,0 +1,65 @@
+Class components in React are building blocks used to create reusable and interactive user interfaces. Before the introduction of React Hooks, they were the primary way to manage state and lifecycle features in React applications.
+
+They manage their own state using this.state.
+They support lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount.
+Props and state are accessed using the this keyword.
+Firstly, Create a new React App
+
+1. Basic Class Components of React
+
+import React, { Component } from 'react';
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <h1>Welcome to React!</h1>
+                <p>This is a simple class component.</p>
+            </div>
+        );
+    }
+}
+export default App;
+Output
+
+React-class-Compoment
+Class Components in React
+The App component is created as a class by extending React.Component.
+The render() method returns the JSX to display the UI.
+Exporting the component allows it to be used in other files.
+2. Adding Styles in the class Components
+
+import React, { Component } from 'react';
+
+class App extends Component {
+    render() {
+        const headingStyle = {
+            color: 'blue',
+            textAlign: 'center',
+        };
+
+        const paragraphStyle = {
+            color: 'green',
+            fontSize: '18px',
+        };
+        return (
+            <div>
+                <h1 style={headingStyle}>Welcome to My React App</h1>
+                <p style={paragraphStyle}>This paragraph has a little color styling.</p>
+            </div>
+        );
+    }
+}
+export default App;
+Output
+
+React-Class-Component-with-Style-
+Class Components in React
+Inline styling is applied using style objects and the style prop.
+Extending Component enables class-based features like render().
+The render() method returns the JSX shown on the page.
+Features of Class Components
+State Management: Class components handle state management using this.state.
+Lifecycle Methods: Class components support lifecycle methods such as componentDidMount, componentDidUpdate, and componentWillUnmount.
+this Keyword: Props and state are accessed using this.
+State Updates: Class components use setState() for state updates, allowing one or multiple state values to be updated at once.
+Re-rendering: Automatically updates the UI when state changes.
