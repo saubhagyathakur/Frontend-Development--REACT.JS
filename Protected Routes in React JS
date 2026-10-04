@@ -1,0 +1,84 @@
+In web development, security is crucial, especially when building React applications that handle sensitive data or functionalities. It is important to restrict access to certain parts of the app to authorized users only. This is where protected routes come into play.
+
+Let's take a closer look at the syntax and explanation of implementing protected routes using React Router:
+
+const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => (
+            isAuthenticated ?
+                <Component {...props} /> : <Redirect to="/login" />
+        )}
+    />
+);
+They require authentication before showing a component, using React and React Router.
+
+Authentication and Authorization
+At the core of protected routes lie two key concepts: authentication and authorization.
+
+Authentication: Verifies the identity of users, usually via username-password, social login, or multi-factor authentication. Successful authentication grants a session token or cookie.
+Authorization: Determines what authenticated users are allowed to access or do, often using roles, permissions, or access control lists (ACLs). Administrators define access rules for routes or features.
+Features of Protected Routes:
+Enhanced Security & Authentication Control: Only authenticated users can access sensitive routes.
+Redirection & Better UX: Unauthorized users are redirected to login or access-denied pages.
+Granular Access & Customization: Developers can control access per user or role and customize authentication logic.
+Error Handling & Compliance: Handles authentication failures smoothly and helps meet data protection requirements.
+Simplified Development: Using React Router makes implementing protected routes easier.
+Steps to Implement Protected Routes:
+Step 1: Create the react application by the following command.
+
+npx create-react-app protected-router
+Step 2: Install the required dependencies
+
+npm i react-router-dom
+Folder Structure:
+wert
+
+package.json:
+
+"dependencies": {
+  "@testing-library/jest-dom": "^5.17.0",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-router-dom": "^6.22.3",
+  "web-vitals": "^2.1.4"
+}
+Example: Create the required files as seen on the folder structure and add the following codes.
+
+
+//App.js
+
+import {
+    BrowserRouter as Router,
+    Routes, Route
+} from 'react-router-dom'
+import Home from './Home'
+import Login from './Login'
+import PrivateRoutes from './utils/PrivateRoutes'
+
+function App() {
+    return (
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route element={<PrivateRoutes />}>
+                        <Route element={<Home />}
+                            path="/" exact />
+                    </Route>
+                    <Route element={<Login />}
+                        path="/login" />
+                </Routes>
+            </Router>
+        </div>
+    );
+}
+
+export default App;
+To start the application run the following command.
+npm start
+Output:
+
+Animation3
+
