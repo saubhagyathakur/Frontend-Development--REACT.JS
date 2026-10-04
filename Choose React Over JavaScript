@@ -1,0 +1,105 @@
+When developing web applications, developers can choose between plain JavaScript or libraries and frameworks like React.js to build user interfaces.
+
+Plain JavaScript requires direct DOM manipulation using selectors and event listeners.
+UI updates and state handling in JavaScript are managed manually.
+Manual DOM handling becomes complex and difficult to maintain in large-scale applications.
+React.js uses a component-based architecture with JSX and the Virtual DOM for better performance and scalability.
+JavaScript
+JavaScript is a scripting language mainly used for web development to create dynamic and interactive web pages. It enables developers to control page behavior directly in the browser.
+
+Allows DOM manipulation and handling of user interactions such as clicks and inputs.
+It was developed by Brenden Eich in 1995.
+Earlier known as Mocha and later LiveScript, and is now known simply as JavaScript.
+ReactJS
+ReactJS is a popular open-source JavaScript library used for building user interfaces in a structured and efficient manner. It helps developers create fast and interactive web applications.
+
+Maintained by Facebook along with a large open-source community.
+Enables creation of dynamic and user-friendly applications using reusable components.
+Benefits of Choosing React over JavaScript
+ReactJS provides several advantages over plain JavaScript when building dynamic and interactive web applications.
+
+Component-Based Architecture: Breaks the UI into small, reusable components, improving reusability and scalability.
+Better Code Organization and Maintenance: Modular components make applications easier to manage and maintain.
+JSX Support: Allows writing HTML-like syntax within JavaScript files for more readable and declarative UI code.
+Efficient DOM Manipulation: Uses a Virtual DOM to update only changed parts, improving performance and user experience.
+State Management: Provides an efficient mechanism to manage and update component state.
+SEO Friendly: Supports server-side rendering, making React applications more SEO-friendly than plain JavaScript apps.
+Creating Web Pages Using JavaScript and ReactJS
+It involves building dynamic and interactive user interfaces using plain JavaScript or the ReactJS library for better structure, performance, and scalability.
+
+1. Using Plain JavaScript
+The vanilla or plain JavaScript is run on the browser with the help of HTML. and It increases the length of code.
+
+Example: The plain JavaScript is used to create a simple web page in the below code example.
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hello World
+    </title>
+</head>
+
+<body style="text-align: center;">
+    <h2>
+        Welcome To GFG
+    </h2>
+    <button id='btn'>
+        Click Me!
+    </button>
+    <script>
+
+        const btn = document.
+            getElementById('btn');
+        btn.addEventListener('click',
+            () => {
+                alert('Hello World!!');
+            });
+    </script>
+</body>
+
+</html>
+Output:
+
+fosiGIF
+
+2. Using React.js
+The react make the code easier to read, also it helps to make the code short and consistent.
+
+Example: The below code implements the React component to create a simple web page.
+
+
+import React from 'react';
+
+function App() {
+    const handleClick = () => {
+        alert("Hello World!!");
+    };
+
+    return (
+        <div>
+            <h2>
+                Welcome To GFG
+            </h2>
+            <button onClick={handleClick}>
+                Click Me!
+            </button>
+        </div>
+    );
+}
+
+export default App;
+Output:
+
+fosiGIF
+
+Features of ReactJS
+Component Based Architecture: Reusable components of code that represents different parts of user interface.
+JSX: JavaScript XML, a syntax extension for JavaScript, that allows us to write HTML in JavaScript Code.
+Virtual DOM: ReactJS uses Virtual DOM. With Virtual DOM, only the component or part that changes gets updated in Real DOM.
+State Management: State is managed within the component, and when it changes, the components re-renders.
+Server Side Rendering: React uses Server side rendering to render components on the web page.
+One Way Data Binding: Data is passed from parent to child components through props.
+React Hooks: Hooks like useState, useEffect and useContext.... make it easier to write more clean and readable code.
